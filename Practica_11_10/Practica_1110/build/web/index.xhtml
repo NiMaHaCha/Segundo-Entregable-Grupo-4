@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Videojuegos</title>
+    </h:head>
+    <h:body style="background: #EAE8E8">
+        <div style="margin-top: 40px;margin-bottom: 70px">
+            <h1 style="text-align: center;background: grey;padding:35px;color: orange;font-size: 36px">Práctica de Base de Datos con Java Server Faces</h1>
+        </div>
+        <h1 style="color: orange;text-align: center">Videojuegos en Existencia</h1>
+        <h:form >
+            <h:dataTable style="margin: 0 auto;" value="#{controllerManagedBean.videojuegoList}"
+                         var="juego" border="2"
+                         cellspacing="1" cellpadding="1">
+
+                <h:column>
+                    <f:facet name="header">Clave</f:facet>
+                        #{juego.clave}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                        #{juego.nombre}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Género</f:facet>
+                        #{juego.genero}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Plataforma</f:facet>
+                        #{juego.plataforma}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Precio</f:facet>
+                        #{juego.precio}
+                </h:column>
+
+            </h:dataTable >
+        </h:form>
+        <h:form style="display: flex;justify-content: center;margin-top:10px;">
+            <h:commandButton value="Agregar Juego" type="submit"
+                             action="#{controllerManagedBean.pedirDatosJuego_aAgregar()}" style="margin-left: 10px">
+            </h:commandButton> 
+            <h:commandButton value="Borrar Juego" type="submit"
+                             action="#{controllerManagedBean.pedirDatosJuego_aBorrar()}" style="margin-left: 10px">
+            </h:commandButton> 
+            <h:commandButton value="Modificar Juego" type="submit"
+                             action="#{controllerManagedBean.pedirDatosJuego_aModificar()}" style="margin-left: 10px">
+            </h:commandButton> 
+        </h:form>
+    </h:body>
+</html>
+
