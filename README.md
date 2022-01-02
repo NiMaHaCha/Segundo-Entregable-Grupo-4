@@ -1,2 +1,0 @@
-# Segundo-Entregable-Grupo-4
-Grupo 4 Ines Paola Malan, Nicolas Marcelo Haro, Victor Alejandro Sanchez 
